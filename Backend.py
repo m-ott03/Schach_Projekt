@@ -1,4 +1,5 @@
-#----------Importing modules and packages
+# ----------Importing modules and packages
+# checking if everything is available
 try:
     from Package_and_file_check import *
 except ModuleNotFoundError:
@@ -11,6 +12,9 @@ from draw_functions import (draw_board, draw_text, draw_pieces, draw_captured, d
                             draw_check, draw_game_over)
 from game_class import GAME
 from misc_functions import in_check, check_pawn_promotion
+
+from start_positions import white_normal as white_start_position
+from start_positions import black_normal as black_start_position
 
 # ---------------------- initialising variables
 turn_step = 0
@@ -31,8 +35,7 @@ turn_step = 0
 game_end = ''
 selection = None
 game_over = False
-from start_positions import white_normal as white_start_position
-from start_positions import black_normal as black_start_position
+
 
 # ----------------- setting up pygame window
 
@@ -44,6 +47,9 @@ WIDTH = 500 * scaling_fact
 HEIGHT = 450 * scaling_fact
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
 
+# timer for frame-rate
+timer = pygame.time.Clock()
+
 # window name
 pygame.display.set_caption('Two-Player Pygame Chess!')
 
@@ -52,16 +58,6 @@ font = pygame.font.Font('freesansbold.ttf', int(10 * scaling_fact))
 medium_font = pygame.font.Font('freesansbold.ttf', int(20 * scaling_fact))
 big_font = pygame.font.Font('freesansbold.ttf', int(25 * scaling_fact))
 
-# -------------------- defining running variable and constants
-
-# timer
-timer = pygame.time.Clock()
-
-# choosing  frame rate
-fps = 60
-
-counter = 0
-turn_step = 0
 
 # --------------------- loading chess pieces
 

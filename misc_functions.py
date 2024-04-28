@@ -29,7 +29,7 @@ def in_check(color: str,
         return False
 
 
-def check_pawn_promotion(all_locations: dict) -> tuple[bool, tuple[str, str, int]]:
+def check_pawn_promotion(all_locations: dict) -> tuple:
 
     """
     Checks for pawns available to promote
@@ -49,5 +49,3 @@ def check_pawn_promotion(all_locations: dict) -> tuple[bool, tuple[str, str, int
                 return True, piece
 
     return False, None
-
-

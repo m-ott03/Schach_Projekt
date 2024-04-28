@@ -5,6 +5,7 @@ from move_logic import pawn_movement, rook_movement, knight_movement, bishop_mov
 
 class GAME:
     """
+    handles the game state
 
     white_pieces = {('color', 'piece', id): (alive, (x, y), Moved ), ..... }
 
@@ -23,8 +24,8 @@ class GAME:
 
         self.white_pieces = deepcopy(white_pieces)
         self.black_pieces = deepcopy(black_pieces)
-        self.moved_pieces = {}  # When Moving a piece: self.moved_pieces.add(piece)
-        self.en_passant_dict = {}
+        self.moved_pieces = set()  # When Moving a piece: self.moved_pieces.add(piece)
+        self.en_passant_dict = {}  # storing pawns that moved two spaces last turn
         self.promo_id = 99  # starting from high value to not interfere with normal id
 
     # -------------------------- Defining methods for alive and captured dictionaries

@@ -140,6 +140,7 @@ def knight_movement(self,
         dx, dy = dx_dy[i]
         target = (x + dx, y + dy)
 
+        # target on screen and not already filled
         if target not in friends_list.values() and 0 <= target[0] <= 7 and 0 <= target[1] <= 7:
             knight_moves_list.append(target)
 
@@ -235,6 +236,7 @@ def king_movement(self,
         dx, dy = dx_dy[i]
         target = (x + dx, y + dy)
 
+        # target on screen and not already filled
         if target not in friends_list.values() and 0 <= target[0] <= 7 and 0 <= target[1] <= 7:
             king_moves_list.append(target)
 
@@ -263,11 +265,14 @@ def rohade_movement(self,
     else:
         rooks = list(piece for piece in self.black_alive().keys() if piece[1] == 'rook')
 
+    # check for all rooks
     for rook in rooks:
+        # retrieve rook coords
         rook_x_position = self.all_alive()[rook][0]
         rook_y_position = self.all_alive()[rook][1]
 
-        movement_direction = int(copysign(1, rook_x_position - king_x_position))  # direction of king rohade move
+        # determining direction of rook relative to king
+        movement_direction = int(copysign(1, rook_x_position - king_x_position))
 
         same_rank = king_y_position == rook_y_position
 

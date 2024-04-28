@@ -112,8 +112,8 @@ def draw_selection(all_alive: dict,
                       50 * scaling_fact, 50 * scaling_fact], 3)
 
 
-def draw_captured(white_captured: dict,
-                  black_captured: dict,
+def draw_captured(white_captured: list[tuple[str, str, int]],
+                  black_captured: list[tuple[str, str, int]],
                   screen,
                   scaling_fact: float,
                   small_images: dict) -> None:

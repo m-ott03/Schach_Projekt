@@ -1,6 +1,6 @@
 
 """
-This loads all packages with Error handling
+This initialy loads all packages, to check if available, with Error handling
 """
 try:
     import pygame
