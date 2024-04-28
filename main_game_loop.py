@@ -90,6 +90,7 @@ while run:
 
                 if click_coords == (8, 8) or click_coords == (9, 8):  # forfeit white
                     game_end = 'black won'
+                    game_over = True
 
                 # ------------- white's piece selection
                 if turn_step == 0:
@@ -139,6 +140,7 @@ while run:
 
                 if click_coords == (8, 8) or click_coords == (9, 8):  # forfeit white
                     game_end = 'white won'
+                    game_over = True
 
                 # ------------black's piece selection
                 if turn_step == 2:
