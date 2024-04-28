@@ -1,5 +1,5 @@
 from copy import deepcopy
-
+from start_positions import white_normal, black_normal
 from move_logic import pawn_movement, rook_movement, knight_movement, bishop_movement, king_movement, rohade_movement
 
 
@@ -18,12 +18,12 @@ class GAME:
     """
 
     def __init__(self,
-                 white_pieces: dict[tuple[str, str, int]: list[bool, tuple[int, int]]],
-                 black_pieces: dict[tuple[str, str, int]: list[bool, tuple[int, int]]]):
+                 white_pieces: dict[tuple[str, str, int]: list[bool, tuple[int, int]]] = white_normal,
+                 black_pieces: dict[tuple[str, str, int]: list[bool, tuple[int, int]]] = black_normal):
 
         self.white_pieces = deepcopy(white_pieces)
         self.black_pieces = deepcopy(black_pieces)
-        self.moved_pieces = {('white', 'pawn', 0)}  # When Moving a piece: self.moved_pieces.add(piece)
+        self.moved_pieces = {}  # When Moving a piece: self.moved_pieces.add(piece)
         self.en_passant_dict = {}
         self.promo_id = 99  # starting from high value to not interfere with normal id
 

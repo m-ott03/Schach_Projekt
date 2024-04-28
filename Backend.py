@@ -31,6 +31,8 @@ turn_step = 0
 game_end = ''
 selection = None
 game_over = False
+from start_positions import white_normal as white_start_position
+from start_positions import black_normal as black_start_position
 
 # ----------------- setting up pygame window
 

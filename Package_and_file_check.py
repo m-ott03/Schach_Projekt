@@ -42,7 +42,8 @@ except Exception as error:
 """
 This checks if all Python files exist and if you have access to them.
 """
-files = ['Backend.py', 'game_class.py', 'draw_functions.py', 'misc_functions.py', 'move_logic.py', 'main_game_loop.py']
+files = ['Backend.py', 'game_class.py', 'draw_functions.py', 'misc_functions.py',
+         'move_logic.py', 'main_game_loop.py', 'start_positions.py']
 for file in files:
     if not os.path.exists(file):
         print(f'Missing {file}')

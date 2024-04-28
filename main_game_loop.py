@@ -1,50 +1,29 @@
 try:
     from Backend import *
 except ModuleNotFoundError:
-    print(f'Missing Package_and_file_check.py')
+    print(f'Missing Files')
     exit()
 except Exception as error:
     print(error)
 
+"""
+choose your starting position. lowerst uncommented one for each colour gets choosen.
+Defaults to normal position if all are commented
+"""
+#-------- Queen handicap
+#from start_positions import white_queen_handicap as white_start_position  # white
+#from start_positions import black_queen_handicap as black_start_position  # black
+
+#-------- reversed ranks
+#from start_positions import white_reversed as white_start_position  # white
+#from start_positions import black_reversed as black_start_position  # black
+
+#-------- pawn war
+#from start_positions import white_pawn_war as white_start_position  # white
+#from start_positions import black_pawn_war as black_start_position  # black
 
 
 
-
-white_start_position = {('white', 'pawn', 0): [True, (0, 6)],
-                        ('white', 'pawn', 1): [True, (1, 6)],
-                        ('white', 'pawn', 2): [False, (2, 6)],
-                        ('white', 'pawn', 3): [True, (3, 6)],
-                        ('white', 'pawn', 4): [True, (4, 6)],
-                        ('white', 'pawn', 5): [True, (5, 6)],
-                        ('white', 'pawn', 6): [True, (6, 6)],
-                        ('white', 'pawn', 7): [True, (7, 6)],
-                        ('white', 'rook', 0): [True, (0, 7)],
-                        ('white', 'rook', 1): [True, (7, 7)],
-                        ('white', 'knight', 0): [True, (1, 7)],
-                        ('white', 'knight', 1): [False, (6, 7)],
-                        ('white', 'bishop', 0): [True, (2, 7)],
-                        ('white', 'bishop', 1): [True, (5, 7)],
-                        ('white', 'queen', 0): [True, (3, 7)],
-                        ('white', 'king', 0): [True, (4, 7)]
-                        }
-
-black_start_position = {('black', 'pawn', 0): [True, (0, 1)],
-                        ('black', 'pawn', 1): [True, (1, 1)],
-                        ('black', 'pawn', 2): [False, (2, 1)],
-                        ('black', 'pawn', 3): [True, (3, 4)],
-                        ('black', 'pawn', 4): [True, (4, 5)],
-                        ('black', 'pawn', 5): [True, (5, 1)],
-                        ('black', 'pawn', 6): [True, (6, 5)],
-                        ('black', 'pawn', 7): [True, (7, 1)],
-                        ('black', 'rook', 0): [True, (0, 0)],
-                        ('black', 'rook', 1): [True, (7, 0)],
-                        ('black', 'knight', 0): [True, (1, 0)],
-                        ('black', 'knight', 1): [False, (6, 0)],
-                        ('black', 'bishop', 0): [True, (2, 0)],
-                        ('black', 'bishop', 1): [True, (5, 0)],
-                        ('black', 'queen', 0): [True, (3, 0)],
-                        ('black', 'king', 0): [True, (4, 0)]
-                        }
 
 # Initialise GAME instance
 Game = GAME(white_start_position, black_start_position)
