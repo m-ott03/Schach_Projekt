@@ -5,7 +5,7 @@ This initialy loads all packages, to check if available, with Error handling
 try:
     import pygame
 except ModuleNotFoundError:
-    print('copy is not installed\nTry: pip install -r requirements.txt')
+    print('pygame is not installed\nTry: pip install -r requirements.txt')
     exit()
 except Exception as error:
     print(error)
@@ -14,7 +14,7 @@ except Exception as error:
 try:
     import copy
 except ModuleNotFoundError:
-    print('copy is not installed\nTry: pip install -r requirements.txt')
+    print('copy was not found')
     exit()
 except Exception as error:
     print(error)
@@ -23,7 +23,7 @@ except Exception as error:
 try:
     from math import copysign
 except ModuleNotFoundError:
-    print('math is not installed\nTry: pip install -r requirements.txt')
+    print('math was not found')
     exit()
 except Exception as error:
     print(error)
@@ -32,7 +32,7 @@ except Exception as error:
 try:
     import os
 except ModuleNotFoundError:
-    print('os is not installed\nTry: pip install -r requirements.txt')
+    print('os was not found')
     exit()
 except Exception as error:
     print(error)
